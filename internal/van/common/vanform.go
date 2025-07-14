@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log/slog"
 
-	"github.com/fgiorgetti/vanform/client"
+	"github.com/fgiorgetti/vanform/internal/client"
 	"github.com/fgiorgetti/vanform/internal/van"
 )
 
