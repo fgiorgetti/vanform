@@ -169,10 +169,20 @@ Now that `VanForm` is running, let's create our sites on west and east namespace
 ## Create the west site
 
 ```bash
-$ kubectl create namespace west
-namespace/west created
+kubectl create namespace west
+```
 
-$ skupper -n west site create west --enable-link-access
+Output:
+```
+namespace/west created
+```
+
+```bash
+skupper -n west site create west --enable-link-access
+```
+
+Output:
+```
 Waiting for status...
 Site "west" is ready.
 ```
@@ -180,10 +190,22 @@ Site "west" is ready.
 ## Create the east site
 
 ```bash
-$ kubectl create namespace east
-namespace/east created
+kubectl create namespace east
+```
 
-$ skupper -n east site create east
+Output:
+
+```
+namespace/east created
+```
+
+```bash
+skupper -n east site create east
+```
+
+Output:
+
+```
 Waiting for status...
 Site "east" is ready.
 ```
