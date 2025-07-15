@@ -8,6 +8,8 @@
 
 # Start Vault Server in Dev mode
 
+In a separate terminal, start the Vault server in dev mode.
+
 ```bash
 vault server -dev -dev-listen-address=0.0.0.0:8200
 ```
@@ -16,8 +18,9 @@ _**Note:**_ Do not use a dev server in production.
 
 ## Set the Vault credentials
 
-Set the VAULT_ADDR and VAULT_TOKEN environment variables, based on the values
-returned when you started vault. Example:
+In the terminal where you're going to run all the commands from this example,
+set the VAULT_ADDR and VAULT_TOKEN environment variables, based on the values
+returned when you started vault (another terminal). Example:
 
 ```bash
 export VAULT_ADDR='http://127.0.0.1:8200'
