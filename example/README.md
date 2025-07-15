@@ -98,7 +98,7 @@ You can use a custom path if desired.
 Each participating Site/Namespace must provide a ConfigMap named `skupper-van-form`.
 Below, you can find the two ConfigMaps needed to run this example:
 
-* Create the `skupper-van-form` ConfigMap to the west site
+* Create the `skupper-van-form` ConfigMap on the west site
 
 ```bash
 cat << EOF > /tmp/west-configmap.yaml
@@ -122,7 +122,7 @@ data:
 EOF
 ```
 
-* Create the `skupper-van-form` ConfigMap to the east site
+* Create the `skupper-van-form` ConfigMap on the east site
 
 ```bash
 cat << EOF > /tmp/east-configmap.yaml
