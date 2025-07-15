@@ -2,7 +2,7 @@
 
 ## Description
 
-The VanForm controller uses Vault to publish and consume credentials linking all participant sites to your VAN.
+The VanForm controller uses Vault to publish and consume credentials linking all participant sites to form your VAN.
 
 Sites can be configured to be part of a given VAN and to be placed in one or multiple zones.
 A Site can also determine if a given zone it participates is reachable to other zones, within the same VAN.
