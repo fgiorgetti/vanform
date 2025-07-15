@@ -3,7 +3,8 @@
 * Kubernetes Cluster (with admin privileges) 
 * Skupper V2 controller installed at cluster scope
 * Skupper V2 CLI
-* Kubectl
+* Kubectl CLI
+* Vault CLI
 
 # Start Vault Server in Dev mode
 
