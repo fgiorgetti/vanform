@@ -44,13 +44,15 @@ parse_args() {
     while [ $# -ne 0 ]; do
         case "${1}" in
             -n|--namespace|--namespace=*)
-                required_arg $*
-                namespace=`required_value $*`
+                required_arg "$@"
+                namespace=$(required_value "$@")
+                # shellcheck disable=SC2015
                 [[ "$1" =~ "=" ]] && shift || shift 2
                 ;;
             --name|--name=*)
-                required_arg $*
-                name=`required_value $*`
+                required_arg "$@"
+                name=$(required_value "$@")
+                # shellcheck disable=SC2015
                 [[ "$1" =~ "=" ]] && shift || shift 2
                 ;;
             -h|--help)
@@ -75,13 +77,13 @@ parse_args() {
 }
 
 main() {
-    parse_args $*
+    parse_args "$@"
 
     kubectl --namespace "${namespace}" create secret generic "${name}" \
         --dry-run=client \
         --output=yaml \
-        --from-literal=role-id=${role_id} \
-        --from-literal=secret-id=${secret_id}
+        --from-literal=role-id="${role_id}" \
+        --from-literal=secret-id="${secret_id}"
 }
 
-main $*
+main "$@"

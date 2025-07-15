@@ -50,12 +50,12 @@ vault policy write skupper-policy /tmp/skupper-policy.hcl
 
 _**Note:**_ This policy is generic and not suitable for production use.
    Make sure that in production your policies are defined with the correct permissions based on each region visibility.
+   Try the [vault-policy.sh](./scripts/vault-policy.sh) script to write your policies.
 
 ## Create a role-id associated with the skupper policy
 
 ```bash
-vault write -format=json -f auth/approle/role/skupper \
-    token_policies="skupper-policy"
+vault write -format=json -f auth/approle/role/skupper token_policies="skupper-policy"
 ```
 
 ## Create a secret-id
@@ -96,7 +96,9 @@ You can use a custom path if desired.
 # Configure your site definition
 
 Each participating Site/Namespace must provide a ConfigMap named `skupper-van-form`.
-Below, you can find the two ConfigMaps needed to run this example:
+Below, you can find the two ConfigMaps needed to run this example.
+
+If you want to create them, you can use the helper script [vanform-configmap.sh](./scripts/vanform-configmap.sh).
 
 * Create the `skupper-van-form` ConfigMap on the west site
 
