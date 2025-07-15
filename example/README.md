@@ -1,10 +1,12 @@
 # Requirements
 
-* Kubernetes Cluster (with admin privileges) 
+* Vault CLI
+  * Server will run as a process on your machine
+* A Minikube cluster (with admin privileges)
+  * Vault server expected to be available at `host.minikube.internal`
 * Skupper V2 controller installed at cluster scope
 * Skupper V2 CLI
 * Kubectl CLI
-* Vault CLI
 
 # Start Vault Server in Dev mode
 
