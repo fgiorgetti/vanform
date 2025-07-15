@@ -1,3 +1,10 @@
+# Requirements
+
+* Kubernetes Cluster (with admin privileges) 
+* Skupper V2 controller installed at cluster scope
+* Skupper V2 CLI
+* Kubectl
+
 # Start Vault Server in Dev mode
 
 ```bash
@@ -166,7 +173,7 @@ skupper-vanform   1/1     1            1           59s
 
 Now that `VanForm` is running, let's create our sites on west and east namespaces.
 
-## Create the west site
+## Create the west namespace
 
 ```bash
 kubectl create namespace west
@@ -176,6 +183,8 @@ Output:
 ```
 namespace/west created
 ```
+
+## Create the west Site
 
 ```bash
 skupper -n west site create west --enable-link-access
@@ -187,7 +196,7 @@ Waiting for status...
 Site "west" is ready.
 ```
 
-## Create the east site
+## Create the east namespace
 
 ```bash
 kubectl create namespace east
@@ -198,6 +207,8 @@ Output:
 ```
 namespace/east created
 ```
+
+## Create the east Site
 
 ```bash
 skupper -n east site create east
