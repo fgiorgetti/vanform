@@ -85,9 +85,10 @@ You can use a custom path if desired.
 Each participating Site/Namespace must provide a ConfigMap named `skupper-van-form`.
 Below, you can find the two ConfigMaps needed to run this example:
 
-Save the YAML below to /tmp/west-configmap.yaml.
+* Create the `skupper-van-form` ConfigMap to the west site
 
-```yaml
+```bash
+cat << EOF > /tmp/west-configmap.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -105,11 +106,13 @@ data:
         "reachable_from": ["east"]
       }]
     }
+EOF
 ```
 
-Save the YAML below to /tmp/east-configmap.yaml.
+* Create the `skupper-van-form` ConfigMap to the east site
 
-```yaml
+```bash
+cat << EOF > /tmp/east-configmap.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -126,9 +129,10 @@ data:
         "name": "east"
       }]
     }
+EOF
 ```
 
-The structure of the VanForm configuration is defined in the README.md file at the repository's root.
+The structure of the VanForm configuration is defined in the [README.md](../README.md#configuration) file at the repository's root.
 
 # Deploying VanForm
 

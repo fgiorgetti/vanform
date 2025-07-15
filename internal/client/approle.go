@@ -103,7 +103,7 @@ func (a *AppRole) renew(client *vault.Client, token *vault.Secret) {
 	for {
 		select {
 		// `DoneCh` will return if renewal fails, or if the remaining lease
-		// duration is under a built-in threshold and either renewing is not
+		// duration is under a built-in threshold, and either renewing is not
 		// extending it or renewing is disabled. In any case, the caller
 		// needs to attempt to log in again.
 		case err := <-watcher.DoneCh():
