@@ -9,10 +9,10 @@
 # Start Vault Server in Dev mode
 
 ```bash
-vault server -dev
+vault server -dev -dev-listen-address=0.0.0.0:8200
 ```
 
-_Note:_ Do not use a dev server in production.
+_**Note:**_ Do not use a dev server in production.
 
 ## Set the Vault credentials
 
@@ -43,7 +43,7 @@ EOF
 vault policy write skupper-policy /tmp/skupper-policy.hcl
 ```
 
-_**Note: **_ This policy is generic and not suitable for production use.
+_**Note:**_ This policy is generic and not suitable for production use.
    Make sure that in production your policies are defined with the correct permissions based on each region visibility.
 
 ## Create a role-id associated with the skupper policy
@@ -227,6 +227,15 @@ Site "east" is ready.
 ```bash
 kubectl -n west get site
 kubectl -n east get site
+```
+
+Output:
+
+```
+NAME   STATUS   SITES IN NETWORK   MESSAGE
+west   Ready    1                  OK
+NAME   STATUS   SITES IN NETWORK   MESSAGE
+east   Ready    1                  OK
 ```
 
 # Configure VanForm
